@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id="quick_create_product" model="ir.actions.act_window">
+        <field name="name">Create product</field>
+        <field name="res_model">product.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="create_view_product_test"/>
+        <field name="target">new</field>
+    </record>
+
+    <record model="ir.ui.view" id="manufacturer_search_view">
+        <field name="name">manufacturer.search</field>
+        <field name="model">manufacturer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="country"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="model_search_view">
+        <field name="name">smartphone_model.search</field>
+        <field name="model">smartphone_model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="manufacturer"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="open_manufacturer_list" model="ir.actions.act_window">
+        <field name="name">Manufacturers</field>
+        <field name="res_model">manufacturer</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="manufacturers_list"/>
+        <field name="target">current</field>
+    </record>
+
+  <record id="open_models_list" model="ir.actions.act_window">
+        <field name="name">Models</field>
+        <field name="res_model">smartphone_model</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="models_list"/>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="phone_manufacturers" parent="sale.menu_sale_config" name="Manufacturer" action="open_manufacturer_list"/>
+    <menuitem id="create_phone" parent="sale.product_menu_catalog" name="Quick Create Product" action="quick_create_product"/>
+    <menuitem id="phone_models" parent="sale.menu_sale_config" name="Models" action="open_models_list"/>
+</odoo>

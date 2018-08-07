@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+           <record id="samsung" model="manufacturer">
+             <field name="name">Samsung</field>
+             <field name="country">South Korea</field>
+           </record> 
+          
+           <record id="apple" model="manufacturer">
+             <field name="name">Apple</field>
+             <field name="country">USA</field>
+           </record> 
+          
+           <record id="xaomi" model="manufacturer">
+             <field name="name">Xaomi</field>
+             <field name="country">China</field>
+           </record> 
+          
+           <record id="sony" model="manufacturer">
+             <field name="name">Sony</field>
+             <field name="country">Japan</field>
+           </record> 
+          
+           <record id="lg" model="manufacturer">
+             <field name="name">LG</field>
+             <field name="country">South Korean</field>
+           </record>
+    </data>
+</odoo>
